@@ -13,7 +13,7 @@
 */
 
 /*
-© [2025] Microchip Technology Inc. and its subsidiaries.
+Â© [2025] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -808,9 +808,9 @@ void ADC_ISR(void)
 
 void ADC_Context1ThresholdISR(void)
 {
+    PORTCbits.RC7 = 1; //pentru monitorizare
     PIR1bits.ADCH1IF = ADC_BIT_CLEAR;
-    PORTCbits.RC7 = 1;
-    
+        
     if (NULL != ADC_Context1ThresholdCallback)
     {
         ADC_Context1ThresholdCallback();
@@ -823,8 +823,9 @@ void ADC_Context1ThresholdISR(void)
 
 void ADC_Context2ThresholdISR(void)
 {
+    PORTCbits.RC7 = 0; //pentru monitorizare
     PIR1bits.ADCH2IF = ADC_BIT_CLEAR;
-    PORTCbits.RC7 = 1;
+    
     
     if (NULL != ADC_Context2ThresholdCallback)
     {
