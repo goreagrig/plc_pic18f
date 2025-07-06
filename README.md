@@ -1,0 +1,1 @@
+This project uses adccc context interrupts and print them through uart. I recommend dev board  EV01G21A. Also I use 2 potentiometers and it is also intended to send data through i2c to a slave of your choice, e.g. lcd.
